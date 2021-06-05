@@ -112,7 +112,10 @@ def do_predict(pred_func, input_file, visualize=False):
 
 
 def predict_on_np_image(pred_func, image_np):
-    return predict_image(image_np, pred_func)
+    results = predict_image(image_np, pred_func)
+    final = draw_final_outputs(img, results)
+    viz = np.concatenate((img, final), axis=1)
+    return viz
 
 
 if __name__ == '__main__':
