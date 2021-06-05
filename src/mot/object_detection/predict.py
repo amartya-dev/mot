@@ -111,6 +111,10 @@ def do_predict(pred_func, input_file, visualize=False):
     tpviz.interactive_imshow(viz)
 
 
+def predict_on_np_image(pred_func, image_np):
+    return predict_image(image_np, pred_func)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--load', help='load a model for evaluation.', required=True)
